@@ -1,0 +1,14 @@
+{% extends "index.html" %}
+{% block content %}
+<form method="POST" action="/check_balance">
+    <div class="form-group">
+        <label for="accNo">Account Number</label>
+        <input type="number" id="accNo" name="accNo" required>
+    </div>
+    <button type="submit" class="btn">Check Balance</button>
+</form>
+
+{% if balance %}
+<p>Your current balance is: ₹{{ balance }}</p>
+{% endif %}
+{% endblock %}
